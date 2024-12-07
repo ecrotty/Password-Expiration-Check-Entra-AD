@@ -1,46 +1,85 @@
-# Contributing to fstab-to-UUID
+# Contributing to Azure VM Backup Checker
 
-Thank you for your interest in contributing to fstab-to-UUID! We welcome contributions from the community and are pleased to have you join us.
-
-## Getting Started
-
-1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/fstab-to-UUID.git`
-3. Create a new branch: `git checkout -b feature/your-feature-name`
-
-## Making Changes
-
-1. Make your changes in your branch
-2. Test your changes thoroughly
-3. Follow the existing code style and conventions
-4. Write clear, descriptive commit messages
-
-## Pull Request Process
-
-1. Update the README.md if needed with details of changes
-2. Ensure your code follows the project's coding standards
-3. Make sure all tests pass
-4. Create a Pull Request with a clear title and description
-
-## Issue Reporting
-
-When creating an issue, please:
-
-1. Check existing issues to avoid duplicates
-2. Use the issue template provided
-3. Include clear steps to reproduce (for bugs)
-4. Include your system information
-5. Provide screenshots if applicable
+First off, thank you for considering contributing to Azure VM Backup Checker! It's people like you that make this tool better for everyone.
 
 ## Code of Conduct
 
-- Be respectful and inclusive
-- Keep discussions constructive
-- Focus on what is best for the community
-- Show empathy towards other community members
+This project and everyone participating in it is governed by our code of conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to ecrotty@edcrotty.com.
 
-## Questions?
+## How Can I Contribute?
 
-If you have questions, feel free to open an issue for discussion.
+### Reporting Bugs
 
-Thank you for contributing!
+Before creating bug reports, please check the existing issues list as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible:
+
+* Use a clear and descriptive title
+* Describe the exact steps which reproduce the problem
+* Provide specific examples to demonstrate the steps
+* Describe the behavior you observed after following the steps
+* Explain which behavior you expected to see instead and why
+* Include error messages and stack traces if applicable
+* Specify your operating system and PowerShell version
+* Include your Azure environment details (if relevant)
+
+### Suggesting Enhancements
+
+Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
+
+* A clear and descriptive title
+* A detailed description of the proposed functionality
+* Explain why this enhancement would be useful
+* List any alternative solutions or features you've considered
+* Include any relevant examples or mock-ups
+
+### Pull Requests
+
+* Fill in the required pull request template
+* Do not include issue numbers in the PR title
+* Follow the PowerShell style and formatting guidelines
+* Include comments in your code where necessary
+* Update the README.md with details of changes if applicable
+* Update the CHANGELOG.md with a note describing your changes
+* The PR should work for PowerShell 5.1 and higher
+* Include appropriate tests if applicable
+
+## Development Process
+
+1. Fork the repo and create your branch from `main`
+2. Make your changes
+3. Test your changes thoroughly
+4. Ensure your code follows the existing style
+5. Create the pull request
+
+## Style Guidelines
+
+### PowerShell Coding Conventions
+
+* Use proper PowerShell verb-noun naming conventions
+* Follow [PowerShell Best Practices and Style Guide](https://poshcode.gitbook.io/powershell-practice-and-style/)
+* Use meaningful variable names
+* Include proper error handling
+* Add comments for complex logic
+* Use proper indentation (4 spaces)
+
+### Documentation Style
+
+* Use Markdown for documentation
+* Keep line length reasonable (around 80-120 characters)
+* Use proper heading hierarchy
+* Include code examples where appropriate
+
+## Additional Notes
+
+### Issue and Pull Request Labels
+
+* bug: Something isn't working
+* enhancement: New feature or request
+* documentation: Improvements or additions to documentation
+* help-wanted: Extra attention is needed
+* good-first-issue: Good for newcomers
+
+## Recognition
+
+Contributors who submit accepted pull requests will be added to the Acknowledgments section of the README.md file.
+
+Thank you for contributing to Azure VM Backup Checker!
