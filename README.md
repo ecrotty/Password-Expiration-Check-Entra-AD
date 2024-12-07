@@ -1,6 +1,6 @@
 # Password Expiration Check for Entra ID and Active Directory
 
-A PowerShell script that automates password expiration monitoring and notification for both Microsoft Entra ID (Azure AD) and Active Directory environments, helping organizations maintain security compliance and prevent account lockouts.
+A PowerShell script that monitors password expiration in Microsoft Entra ID (Azure AD) and Active Directory, automating notifications to help prevent account lockouts.
 
 ## Features
 
