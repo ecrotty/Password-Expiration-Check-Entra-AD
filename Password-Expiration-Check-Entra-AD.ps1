@@ -1,3 +1,13 @@
+#
+# Password Expiration Check for Entra ID and Active Directory
+# Copyright (c) 2024, Ed Crotty (ecrotty@edcrotty.com)
+# Repository: https://github.com/ecrotty/Password-Expiration-Check-Entra-AD
+#
+# Licensed under the BSD 3-Clause License.
+# For full license text, see the LICENSE file in the repository root
+# or https://github.com/ecrotty/Password-Expiration-Check-Entra-AD/blob/main/LICENSE
+#
+
 <#
 .SYNOPSIS
 Checks password expiration for admin accounts and specified email addresses in Entra ID and/or Active Directory.
@@ -512,5 +522,3 @@ catch {
 finally {
     Disconnect-MgGraph
 }
-
-
