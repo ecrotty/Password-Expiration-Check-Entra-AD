@@ -1,5 +1,5 @@
 ## Description
-Please include a summary of the change and which issue is fixed. Include relevant motivation and context.
+Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context.
 
 Fixes # (issue)
 
@@ -11,27 +11,29 @@ Please delete options that are not relevant.
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation update
 
-## Checklist:
-Please delete options that are not relevant.
+## Checklist
+Before submitting your PR, please review the following:
 
 - [ ] My code follows the PowerShell style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
-- [ ] I have tested my changes in the following environments:
-  - PowerShell version(s):
-  - Operating System(s):
-  - Azure Environment(s):
-- [ ] Any dependent changes have been merged and published in downstream modules
+- [ ] I have tested my changes with various scenarios:
+  - [ ] With Entra ID (if applicable)
+  - [ ] With Active Directory (if applicable)
+  - [ ] With email notifications (if applicable)
+  - [ ] In simulation mode (if applicable)
+- [ ] Any dependent changes have been merged and published
 
-## Testing Description
-Please describe the tests that you ran to verify your changes.
+## Test Environment
+- PowerShell Version:
+- Operating System:
+- Module Versions:
+  - Microsoft.Graph.Authentication:
+  - Microsoft.Graph.Users:
+  - Microsoft.Graph.Identity.DirectoryManagement:
+  - ActiveDirectory (if applicable):
 
-- Test A
-- Test B
-
-## Screenshots (if appropriate):
-
-## Additional Notes:
+## Additional Notes
 Add any other context about the pull request here.

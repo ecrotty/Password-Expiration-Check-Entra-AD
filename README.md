@@ -1,33 +1,37 @@
-# Azure VM Backup Checker
+# Password Expiration Check for Entra ID and Active Directory
 
-A PowerShell script that identifies Azure Virtual Machines without backup protection across subscriptions. This tool helps ensure your Azure infrastructure maintains proper backup coverage by scanning all VMs and reporting those that lack backup configuration.
+A PowerShell script that automates password expiration monitoring and notification for both Microsoft Entra ID (Azure AD) and Active Directory environments, helping organizations maintain security compliance and prevent account lockouts.
 
 ## Features
 
-- Scans Azure VMs across single or multiple subscriptions
-- Identifies VMs without backup protection
-- Supports both local execution and Azure Automation runbook deployment
-- Optional email reporting capability using Microsoft Graph
-- Calculates and displays backup coverage statistics
-- Handles authentication via interactive login or managed identity
+- Checks password expiration for both Entra ID and Active Directory accounts
+- Supports checking admin accounts automatically
+- Allows checking additional specified email addresses
+- Sends customizable email notifications for expiring passwords
+- Provides an overview mode for password status reporting
+- Handles both never-expiring and standard password policies
+- Supports simulation mode for testing notifications
+- Comprehensive logging for troubleshooting
 
 ## Prerequisites
 
 - PowerShell 5.1 or higher
 - Required PowerShell Modules (automatically installed if missing):
-  - Az.Accounts (v4.0.0 or higher)
-  - Az.Compute
-  - Az.RecoveryServices
-  - Microsoft.Graph (only if email functionality is enabled)
-- Azure subscription with appropriate permissions
-- For email functionality: Microsoft 365 account with appropriate Graph API permissions
+  - Microsoft.Graph.Authentication (v2.0.0 or higher)
+  - Microsoft.Graph.Users
+  - Microsoft.Graph.Identity.DirectoryManagement
+  - ActiveDirectory (if checking AD passwords)
+- Appropriate permissions in Entra ID and/or Active Directory
+- Microsoft Graph API permissions for email notifications:
+  - User.Read.All
+  - Directory.Read.All
 
 ## Installation
 
 1. Clone this repository:
 ```powershell
-git clone https://github.com/ecrotty/Azure-VM-No-Backup.git
-cd Azure-VM-No-Backup
+git clone https://github.com/ecrotty/Password-Expiration-Check-Entra-AD.git
+cd Password-Expiration-Check-Entra-AD
 ```
 
 2. Ensure you have PowerShell 5.1 or higher installed:
@@ -37,58 +41,73 @@ $PSVersionTable.PSVersion
 
 ## Usage
 
-### Local Execution
+### Basic Usage
 
-1. Configure the script parameters in the script header:
 ```powershell
-# Basic configuration
-$runMode = "Local"  # For interactive login
-$enableEmail = $false  # Set to $true if you want email notifications
-$checkAllSubscriptions = $false  # Set to $true to check all accessible subscriptions
+.\Password-Expiration-Check-Entra-AD.ps1
+```
+This will check all admin accounts in both Entra ID and Active Directory.
 
-# Email configuration (required if enableEmail is $true)
-$emailFrom = "your-email@domain.com"  # Your sender email address
-$emailTo = "recipient@domain.com"  # Recipient email address
-$emailSubject = "Azure VMs Without Backup Protection Report"
+### Check Specific Email Addresses
+
+```powershell
+.\Password-Expiration-Check-Entra-AD.ps1 -AdditionalEmails "user1@company.com","user2@company.com"
 ```
 
-2. Run the script:
+### Check Only Entra ID
+
 ```powershell
-.\Azure-VM-No-Backup.ps1
+.\Password-Expiration-Check-Entra-AD.ps1 -CheckType 'Entra'
 ```
 
-### Azure Automation Execution
+### Disable Notifications (Simulation Mode)
 
-1. Import the script as a runbook in Azure Automation
-2. Set the following variables:
 ```powershell
-$runMode = "Automation"
+.\Password-Expiration-Check-Entra-AD.ps1 -DisableNotifications
 ```
 
-3. Configure the managed identity for your Automation account
-4. Schedule or run the runbook as needed
+### Display Password Expiration Overview
+
+```powershell
+.\Password-Expiration-Check-Entra-AD.ps1 -Overview
+```
+
+### Show Help
+
+```powershell
+.\Password-Expiration-Check-Entra-AD.ps1 -help
+```
+
+## Parameters
+
+| Parameter | Description | Required | Default |
+|-----------|-------------|----------|---------|
+| AdditionalEmails | Array of email addresses to check | No | None |
+| CheckType | Type of check: 'AD', 'Entra', or 'Both' | No | 'Both' |
+| DisableNotifications | Switch to disable sending emails | No | False |
+| Overview | Switch to display expiration overview | No | False |
+| help | Display detailed help | No | False |
 
 ## Configuration
 
-The script supports the following configuration variables:
+The script uses a configuration hashtable that can be modified at the top of the script:
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| $runMode | Execution mode ("Local" or "Automation") | "Local" |
-| $enableEmail | Enable/disable email notifications | $false |
-| $checkAllSubscriptions | Check all accessible subscriptions | $false |
-| $emailFrom | Sender email address | "changeme" |
-| $emailTo | Recipient email address | "changeme" |
-| $emailSubject | Email subject line | "Azure VMs Without Backup Protection Report" |
+```powershell
+$config = @{
+    FromAddress = "changeme"  # Sender email address
+    ErrorNotificationEmail = "changeme"  # Email for script error notifications
+    DefaultPasswordExpiryDays = 90  # Default if policy can't be retrieved
+}
+```
 
 ## Output
 
 The script provides:
-- Summary of total VMs checked
-- Backup coverage percentage
-- List of VMs without backup protection
-- Complete VM backup status table
-- Optional email report with detailed findings
+- Detailed logging of all operations
+- Password expiration status for each user
+- Email notifications for users with expiring passwords
+- Overview report showing all password statuses
+- Error notifications for script issues
 
 ## Contributing
 
@@ -104,5 +123,5 @@ Ed Crotty (ecrotty@edcrotty.com)
 
 ## Acknowledgments
 
-- Azure PowerShell team for maintaining the Az modules
-- Microsoft Graph team for the email integration capabilities
+- Microsoft Graph PowerShell SDK team
+- Active Directory PowerShell module team

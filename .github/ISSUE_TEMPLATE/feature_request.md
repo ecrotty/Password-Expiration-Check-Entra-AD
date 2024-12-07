@@ -4,22 +4,26 @@ about: Suggest an idea for this project
 title: '[FEATURE] '
 labels: enhancement
 assignees: ''
+
 ---
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **Describe the solution you'd like**
-A clear and concise description of what you want to happen. Include any specific Azure or PowerShell functionality you'd like to leverage.
+A clear and concise description of what you want to happen.
 
 **Describe alternatives you've considered**
 A clear and concise description of any alternative solutions or features you've considered.
 
-**Implementation Considerations**
-- Any specific Azure services or APIs needed
-- Performance implications
-- Security considerations
-- Backward compatibility concerns
+**Use case**
+Describe the specific use case this feature would address. How would it benefit users of the script?
+
+**Implementation considerations**
+- Would this require new PowerShell modules?
+- Would this require additional permissions?
+- Would this impact performance?
+- Would this require changes to existing functionality?
 
 **Additional context**
-Add any other context, Azure-specific details, or screenshots about the feature request here.
+Add any other context or screenshots about the feature request here.

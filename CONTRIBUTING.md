@@ -1,6 +1,6 @@
-# Contributing to Azure VM Backup Checker
+# Contributing to Password Expiration Check for Entra ID and Active Directory
 
-First off, thank you for considering contributing to Azure VM Backup Checker! It's people like you that make this tool better for everyone.
+First off, thank you for considering contributing to the Password Expiration Check script! It's people like you that make this tool better for everyone.
 
 ## Code of Conduct
 
@@ -19,7 +19,7 @@ Before creating bug reports, please check the existing issues list as you might 
 * Explain which behavior you expected to see instead and why
 * Include error messages and stack traces if applicable
 * Specify your operating system and PowerShell version
-* Include your Azure environment details (if relevant)
+* Include your Entra ID/Active Directory environment details (if relevant)
 
 ### Suggesting Enhancements
 
@@ -82,4 +82,4 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 Contributors who submit accepted pull requests will be added to the Acknowledgments section of the README.md file.
 
-Thank you for contributing to Azure VM Backup Checker!
+Thank you for contributing to the Password Expiration Check script!

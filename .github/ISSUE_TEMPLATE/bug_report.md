@@ -4,6 +4,7 @@ about: Create a report to help us improve
 title: '[BUG] '
 labels: bug
 assignees: ''
+
 ---
 
 **Describe the bug**
@@ -11,30 +12,28 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Set configuration '...'
-2. Run script with '....'
-3. Check output '....'
-4. See error
+1. Script parameters used
+2. Environment details (Entra ID/AD setup)
+3. Any specific user configurations
+4. Error messages received
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Error Messages**
-If applicable, include any error messages or stack traces.
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
-**Environment:**
- - OS: [e.g., Windows Server 2019]
- - PowerShell Version: [e.g., 5.1]
- - Az Module Versions:
-   - Az.Accounts: [e.g., 4.0.0]
-   - Az.Compute: [version]
-   - Az.RecoveryServices: [version]
- - Microsoft.Graph Version (if using email feature): [version]
-
-**Azure Environment Details**
-- Subscription Type: [e.g., Pay-As-You-Go, Enterprise, etc.]
-- Running as: [e.g., Local user, Service Principal, Managed Identity]
-- Number of VMs being checked: [approximate number]
+**Environment (please complete the following information):**
+ - OS: [e.g. Windows Server 2019]
+ - PowerShell Version: [e.g. 5.1]
+ - Module Versions:
+   - Microsoft.Graph.Authentication:
+   - Microsoft.Graph.Users:
+   - Microsoft.Graph.Identity.DirectoryManagement:
+   - ActiveDirectory:
 
 **Additional context**
 Add any other context about the problem here.
+- Are you using the script with Entra ID, AD, or both?
+- Are you using email notifications?
+- Any specific configuration settings?
