@@ -41,9 +41,15 @@ $PSVersionTable.PSVersion
 
 1. Configure the script parameters in the script header:
 ```powershell
+# Basic configuration
 $runMode = "Local"  # For interactive login
 $enableEmail = $false  # Set to $true if you want email notifications
 $checkAllSubscriptions = $false  # Set to $true to check all accessible subscriptions
+
+# Email configuration (required if enableEmail is $true)
+$emailFrom = "your-email@domain.com"  # Your sender email address
+$emailTo = "recipient@domain.com"  # Recipient email address
+$emailSubject = "Azure VMs Without Backup Protection Report"
 ```
 
 2. Run the script:
