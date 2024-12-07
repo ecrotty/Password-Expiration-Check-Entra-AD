@@ -26,7 +26,7 @@ A PowerShell script that identifies Azure Virtual Machines without backup protec
 
 1. Clone this repository:
 ```powershell
-git clone https://github.com/Ed-Crotty/Azure-VM-No-Backup.git
+git clone https://github.com/ecrotty/Azure-VM-No-Backup.git
 cd Azure-VM-No-Backup
 ```
 
